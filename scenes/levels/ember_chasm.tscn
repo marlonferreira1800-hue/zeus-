@@ -1,0 +1,226 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/terrain.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/entity.tscn" id="3"]
+[ext_resource type="Script" path="res://scripts/level_art.gd" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/moving_platform.tscn" id="5"]
+
+[node name="Level" type="Node2D"]
+metadata/world_width = 2500
+
+[node name="ArtFar" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.09, 1)
+repeat_size = Vector2(691, 0)
+script = ExtResource("4")
+theme = 4
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(70, 268)
+
+[node name="Ground1" parent="." instance=ExtResource("2")]
+position = Vector2(200, 300)
+size = Vector2(400, 40)
+theme = 4
+
+[node name="Ground2" parent="." instance=ExtResource("2")]
+position = Vector2(635, 300)
+size = Vector2(350, 40)
+theme = 4
+
+[node name="Ground3" parent="." instance=ExtResource("2")]
+position = Vector2(1050, 300)
+size = Vector2(380, 40)
+theme = 4
+
+[node name="Ground4" parent="." instance=ExtResource("2")]
+position = Vector2(1500, 300)
+size = Vector2(400, 40)
+theme = 4
+
+[node name="Ground5" parent="." instance=ExtResource("2")]
+position = Vector2(1940, 300)
+size = Vector2(380, 40)
+theme = 4
+
+[node name="Ground6" parent="." instance=ExtResource("2")]
+position = Vector2(2365, 300)
+size = Vector2(270, 40)
+theme = 4
+
+[node name="Platform1" parent="." instance=ExtResource("2")]
+position = Vector2(290, 235)
+size = Vector2(90, 16)
+theme = 4
+
+[node name="Platform2" parent="." instance=ExtResource("2")]
+position = Vector2(650, 220)
+size = Vector2(90, 16)
+theme = 4
+
+[node name="Platform3" parent="." instance=ExtResource("2")]
+position = Vector2(1030, 220)
+size = Vector2(90, 16)
+theme = 4
+
+[node name="Platform4" parent="." instance=ExtResource("2")]
+position = Vector2(1480, 220)
+size = Vector2(85, 16)
+theme = 4
+
+[node name="Platform5" parent="." instance=ExtResource("2")]
+position = Vector2(1920, 220)
+size = Vector2(90, 16)
+theme = 4
+
+[node name="Platform6" parent="." instance=ExtResource("2")]
+position = Vector2(2260, 220)
+size = Vector2(90, 16)
+theme = 4
+
+[node name="Item1" parent="." instance=ExtResource("3")]
+position = Vector2(140, 240)
+kind = 5
+
+[node name="Item2" parent="." instance=ExtResource("3")]
+position = Vector2(280, 195)
+kind = 5
+
+[node name="Item3" parent="." instance=ExtResource("3")]
+position = Vector2(360, 220)
+kind = 5
+
+[node name="Item4" parent="." instance=ExtResource("3")]
+position = Vector2(530, 235)
+kind = 5
+
+[node name="Item5" parent="." instance=ExtResource("3")]
+position = Vector2(650, 180)
+kind = 5
+
+[node name="Item6" parent="." instance=ExtResource("3")]
+position = Vector2(750, 230)
+kind = 5
+
+[node name="Item7" parent="." instance=ExtResource("3")]
+position = Vector2(900, 235)
+kind = 5
+
+[node name="Item8" parent="." instance=ExtResource("3")]
+position = Vector2(1030, 180)
+kind = 5
+
+[node name="Item9" parent="." instance=ExtResource("3")]
+position = Vector2(1150, 230)
+kind = 5
+
+[node name="Item10" parent="." instance=ExtResource("3")]
+position = Vector2(1350, 235)
+kind = 5
+
+[node name="Item11" parent="." instance=ExtResource("3")]
+position = Vector2(1480, 180)
+kind = 5
+
+[node name="Item12" parent="." instance=ExtResource("3")]
+position = Vector2(1600, 230)
+kind = 5
+
+[node name="Item13" parent="." instance=ExtResource("3")]
+position = Vector2(1760, 235)
+kind = 5
+
+[node name="Item14" parent="." instance=ExtResource("3")]
+position = Vector2(1920, 180)
+kind = 5
+
+[node name="Item15" parent="." instance=ExtResource("3")]
+position = Vector2(2070, 230)
+kind = 5
+
+[node name="Item16" parent="." instance=ExtResource("3")]
+position = Vector2(2250, 180)
+kind = 5
+
+[node name="Item17" parent="." instance=ExtResource("3")]
+position = Vector2(2420, 230)
+kind = 5
+
+[node name="Enemy1" parent="." instance=ExtResource("3")]
+position = Vector2(600, 270)
+kind = 1
+patrol_distance = 35
+
+[node name="Enemy2" parent="." instance=ExtResource("3")]
+position = Vector2(1040, 270)
+kind = 1
+patrol_distance = 35
+
+[node name="Enemy3" parent="." instance=ExtResource("3")]
+position = Vector2(1480, 270)
+kind = 1
+patrol_distance = 35
+
+[node name="Enemy4" parent="." instance=ExtResource("3")]
+position = Vector2(1930, 270)
+kind = 1
+patrol_distance = 35
+
+[node name="Enemy5" parent="." instance=ExtResource("3")]
+position = Vector2(2330, 270)
+kind = 1
+patrol_distance = 35
+
+[node name="Spikes1" parent="." instance=ExtResource("3")]
+position = Vector2(345, 266)
+kind = 4
+
+[node name="Spikes2" parent="." instance=ExtResource("3")]
+position = Vector2(750, 266)
+kind = 4
+
+[node name="Spikes3" parent="." instance=ExtResource("3")]
+position = Vector2(1130, 266)
+kind = 4
+
+[node name="Spikes4" parent="." instance=ExtResource("3")]
+position = Vector2(1580, 266)
+kind = 4
+
+[node name="Spikes5" parent="." instance=ExtResource("3")]
+position = Vector2(1990, 266)
+kind = 4
+
+[node name="Spikes6" parent="." instance=ExtResource("3")]
+position = Vector2(2370, 266)
+kind = 4
+
+[node name="MovingPlatform1" parent="." instance=ExtResource("5")]
+position = Vector2(440, 238)
+travel = Vector2(0, -20)
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("5")]
+position = Vector2(840, 232)
+travel = Vector2(0, -20)
+
+[node name="MovingPlatform3" parent="." instance=ExtResource("5")]
+position = Vector2(1270, 228)
+travel = Vector2(0, -20)
+
+[node name="MovingPlatform4" parent="." instance=ExtResource("5")]
+position = Vector2(1740, 220)
+travel = Vector2(0, -20)
+
+[node name="MovingPlatform5" parent="." instance=ExtResource("5")]
+position = Vector2(2140, 230)
+travel = Vector2(0, -20)
+
+[node name="Checkpoint" parent="." instance=ExtResource("3")]
+position = Vector2(1250, 250)
+kind = 2
+
+[node name="Goal" parent="." instance=ExtResource("3")]
+position = Vector2(2440, 250)
+kind = 3
+
+

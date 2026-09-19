@@ -1,0 +1,174 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/terrain.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/entity.tscn" id="3"]
+[ext_resource type="Script" path="res://scripts/level_art.gd" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/moving_platform.tscn" id="5"]
+
+[node name="Level" type="Node2D"]
+metadata/world_width = 2500
+
+[node name="ArtFar" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.35, 1)
+script = ExtResource("4")
+theme = 0
+
+[node name="ArtNear" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.72, 1)
+script = ExtResource("4")
+theme = 0
+art_layer = 1
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(70, 268)
+
+[node name="MoveHint" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 215.0
+offset_right = 278.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(0.11, 0.25, 0.25, 1)
+theme_override_font_sizes/font_size = 14
+text = "A/D ou setas: andar"
+
+[node name="JumpHint" type="Label" parent="."]
+offset_left = 403.0
+offset_top = 181.0
+offset_right = 579.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0.11, 0.25, 0.25, 1)
+theme_override_font_sizes/font_size = 14
+text = "Espaço: pular   Shift: correr"
+
+[node name="Ground1" parent="." instance=ExtResource("2")]
+position = Vector2(260, 300)
+size = Vector2(520, 40)
+theme = 0
+
+[node name="Ground2" parent="." instance=ExtResource("2")]
+position = Vector2(820, 300)
+size = Vector2(460, 40)
+theme = 0
+
+[node name="Ground3" parent="." instance=ExtResource("2")]
+position = Vector2(1355, 300)
+size = Vector2(490, 40)
+theme = 0
+
+[node name="Ground4" parent="." instance=ExtResource("2")]
+position = Vector2(2082.5, 300)
+size = Vector2(835, 40)
+theme = 0
+
+[node name="Platform1" parent="." instance=ExtResource("2")]
+position = Vector2(340, 242)
+size = Vector2(100, 16)
+theme = 0
+
+[node name="Platform2" parent="." instance=ExtResource("2")]
+position = Vector2(760, 240)
+size = Vector2(100, 16)
+theme = 0
+
+[node name="Platform3" parent="." instance=ExtResource("2")]
+position = Vector2(1320, 236)
+size = Vector2(110, 16)
+theme = 0
+
+[node name="Platform4" parent="." instance=ExtResource("2")]
+position = Vector2(1830, 242)
+size = Vector2(100, 16)
+theme = 0
+
+[node name="Platform5" parent="." instance=ExtResource("2")]
+position = Vector2(2110, 240)
+size = Vector2(100, 16)
+theme = 0
+
+[node name="Coin1" parent="." instance=ExtResource("3")]
+position = Vector2(190, 240)
+kind = 0
+
+[node name="Coin2" parent="." instance=ExtResource("3")]
+position = Vector2(230, 220)
+kind = 0
+
+[node name="Coin3" parent="." instance=ExtResource("3")]
+position = Vector2(340, 200)
+kind = 0
+
+[node name="Coin4" parent="." instance=ExtResource("3")]
+position = Vector2(470, 240)
+kind = 0
+
+[node name="Coin5" parent="." instance=ExtResource("3")]
+position = Vector2(555, 230)
+kind = 0
+
+[node name="Coin6" parent="." instance=ExtResource("3")]
+position = Vector2(670, 245)
+kind = 0
+
+[node name="Coin7" parent="." instance=ExtResource("3")]
+position = Vector2(760, 198)
+kind = 0
+
+[node name="Coin8" parent="." instance=ExtResource("3")]
+position = Vector2(920, 245)
+kind = 0
+
+[node name="Coin9" parent="." instance=ExtResource("3")]
+position = Vector2(1090, 235)
+kind = 0
+
+[node name="Coin10" parent="." instance=ExtResource("3")]
+position = Vector2(1220, 243)
+kind = 0
+
+[node name="Coin11" parent="." instance=ExtResource("3")]
+position = Vector2(1320, 195)
+kind = 0
+
+[node name="Coin12" parent="." instance=ExtResource("3")]
+position = Vector2(1510, 245)
+kind = 0
+
+[node name="Coin13" parent="." instance=ExtResource("3")]
+position = Vector2(1640, 230)
+kind = 0
+
+[node name="Coin14" parent="." instance=ExtResource("3")]
+position = Vector2(1830, 200)
+kind = 0
+
+[node name="Coin15" parent="." instance=ExtResource("3")]
+position = Vector2(2050, 245)
+kind = 0
+
+[node name="Coin16" parent="." instance=ExtResource("3")]
+position = Vector2(2250, 245)
+kind = 0
+
+[node name="Enemy1" parent="." instance=ExtResource("3")]
+position = Vector2(760, 270)
+kind = 1
+patrol_distance = 45.0
+
+[node name="Enemy2" parent="." instance=ExtResource("3")]
+position = Vector2(1460, 270)
+kind = 1
+patrol_distance = 45.0
+
+[node name="Enemy3" parent="." instance=ExtResource("3")]
+position = Vector2(2050, 270)
+kind = 1
+patrol_distance = 45.0
+
+[node name="Checkpoint" parent="." instance=ExtResource("3")]
+position = Vector2(1270, 250)
+kind = 2
+
+[node name="Goal" parent="." instance=ExtResource("3")]
+position = Vector2(2400, 250)
+kind = 3

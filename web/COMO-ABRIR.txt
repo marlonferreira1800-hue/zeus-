@@ -1,0 +1,10 @@
+PIXELBOUND - VERSAO WEB
+
+Abra index.html por um servidor local ou publique esta pasta em qualquer hospedagem de arquivos estaticos.
+Em muitos navegadores, abrir index.html diretamente pelo Explorador pode bloquear o carregamento do .wasm; nesse caso, use um servidor local simples.
+
+Exemplo com Python:
+python -m http.server 8000
+Depois acesse http://localhost:8000
+
+A pasta foi exportada para navegador com o motor sem threads para reduzir o download.

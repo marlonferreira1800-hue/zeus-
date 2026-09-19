@@ -1,0 +1,310 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/pixelbound/portrait.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/pixelbound/valley.jpg" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="panel"]
+bg_color = Color(0.075, 0.145, 0.20, 0.94)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.36, 0.78, 0.62, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="wood"]
+bg_color = Color(0.67, 0.4, 0.2, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.28, 0.16, 0.08, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="MenuBackdrop" type="TextureRect" parent="UI"]
+visible = false
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+modulate = Color(0.55, 0.65, 0.67, 1)
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HUD" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 284.0
+offset_bottom = 47.0
+theme_override_styles/panel = SubResource("panel")
+
+[node name="Row" type="HBoxContainer" parent="UI/HUD"]
+layout_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="UI/HUD/Row"]
+custom_minimum_size = Vector2(30, 31)
+layout_mode = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/HUD/Row"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 10
+vertical_alignment = 1
+text = "MOEDAS 00     VIDAS 3"
+
+[node name="WorldSign" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 418.0
+offset_top = 8.0
+offset_right = 568.0
+offset_bottom = 45.0
+theme_override_styles/panel = SubResource("wood")
+
+[node name="Label" type="Label" parent="UI/WorldSign"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.17, 0.08, 0.03, 1)
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "MUNDO 1\nGREENBYTE VALLEY"
+
+[node name="Objectives" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 399.0
+offset_top = 246.0
+offset_right = 568.0
+offset_bottom = 315.0
+theme_override_styles/panel = SubResource("panel")
+
+[node name="VBox" type="VBoxContainer" parent="UI/Objectives"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/Objectives/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.37, 1)
+theme_override_font_sizes/font_size = 10
+text = "OBJETIVO"
+
+[node name="Fragments" type="Label" parent="UI/Objectives/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "[ ] 12 fragmentos"
+
+[node name="Slimes" type="Label" parent="UI/Objectives/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "[ ] 4 slimes"
+
+[node name="Portal" type="Label" parent="UI/Objectives/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "[ ] Encontrar o portal"
+
+[node name="PortalHint" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 10.0
+offset_top = 281.0
+offset_right = 359.0
+offset_bottom = 313.0
+theme_override_styles/panel = SubResource("panel")
+
+[node name="Label" type="Label" parent="UI/PortalHint"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.93, 0.72, 1)
+theme_override_font_sizes/font_size = 10
+vertical_alignment = 1
+text = "Portal fechado"
+
+[node name="Menu" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 135.0
+offset_top = 48.0
+offset_right = 441.0
+offset_bottom = 286.0
+theme_override_styles/panel = SubResource("panel")
+
+[node name="VBox" type="VBoxContainer" parent="UI/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Title" type="Label" parent="UI/Menu/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.91, 0.61, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "PIXELBOUND"
+
+[node name="Message" type="Label" parent="UI/Menu/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.97, 0.89, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+text = "A JORNADA DOS SEIS MUNDOS\nRecupere a energia do Núcleo"
+
+[node name="Play" type="Button" parent="UI/Menu/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Jogar"
+
+[node name="Controls" type="Button" parent="UI/Menu/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Controles"
+
+[node name="Quit" type="Button" parent="UI/Menu/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Sair"
+
+[node name="ControlsPanel" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 135.0
+offset_top = 48.0
+offset_right = 441.0
+offset_bottom = 286.0
+theme_override_styles/panel = SubResource("panel")
+
+[node name="VBox" type="VBoxContainer" parent="UI/ControlsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Title" type="Label" parent="UI/ControlsPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.91, 0.61, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "CONTROLES"
+
+[node name="Message" type="Label" parent="UI/ControlsPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.97, 0.89, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+text = "A/D ou setas: andar\\nShift: correr\\nEspaço: pular\\nEsc: pausar\\nR: reiniciar após derrota"
+
+[node name="Back" type="Button" parent="UI/ControlsPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Voltar"
+
+[node name="Pause" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 135.0
+offset_top = 48.0
+offset_right = 441.0
+offset_bottom = 286.0
+theme_override_styles/panel = SubResource("panel")
+
+[node name="VBox" type="VBoxContainer" parent="UI/Pause"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Title" type="Label" parent="UI/Pause/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.91, 0.61, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "PAUSADO"
+
+[node name="Message" type="Label" parent="UI/Pause/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.97, 0.89, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+text = "Respire e continue a aventura."
+
+[node name="Resume" type="Button" parent="UI/Pause/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Continuar"
+
+[node name="MenuButton" type="Button" parent="UI/Pause/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Menu inicial"
+
+[node name="Defeat" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 135.0
+offset_top = 48.0
+offset_right = 441.0
+offset_bottom = 286.0
+theme_override_styles/panel = SubResource("panel")
+
+[node name="VBox" type="VBoxContainer" parent="UI/Defeat"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Title" type="Label" parent="UI/Defeat/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.91, 0.61, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "FIM DE JOGO"
+
+[node name="Message" type="Label" parent="UI/Defeat/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.97, 0.89, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+text = "Suas vidas acabaram.\\nPressione R para tentar outra vez."
+
+[node name="Retry" type="Button" parent="UI/Defeat/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Repetir esta fase"
+
+[node name="MenuButton" type="Button" parent="UI/Defeat/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Menu inicial"
+
+[node name="Win" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 135.0
+offset_top = 48.0
+offset_right = 441.0
+offset_bottom = 286.0
+theme_override_styles/panel = SubResource("panel")
+
+[node name="VBox" type="VBoxContainer" parent="UI/Win"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Title" type="Label" parent="UI/Win/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.91, 0.61, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "VITÓRIA"
+
+[node name="Message" type="Label" parent="UI/Win/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.97, 0.89, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+text = "Vale salvo!"
+
+[node name="MenuButton" type="Button" parent="UI/Win/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Menu inicial"

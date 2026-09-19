@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="2_background"]
+[ext_resource type="Script" path="res://scripts/ground_visual.gd" id="3_ground"]
+[ext_resource type="Script" path="res://scripts/platform_visual.gd" id="4_platform"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(2600, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_platform"]
+size = Vector2(180, 24)
+
+[node name="Level01" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("2_background")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(1300, 614)
+
+[node name="Visual" type="Node2D" parent="Ground"]
+script = ExtResource("3_ground")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Platform1" type="StaticBody2D" parent="."]
+position = Vector2(430, 470)
+
+[node name="Visual" type="Node2D" parent="Platform1"]
+script = ExtResource("4_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(730, 375)
+
+[node name="Visual" type="Node2D" parent="Platform2"]
+script = ExtResource("4_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(1050, 460)
+
+[node name="Visual" type="Node2D" parent="Platform3"]
+script = ExtResource("4_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(1420, 420)
+
+[node name="Visual" type="Node2D" parent="Platform4"]
+script = ExtResource("4_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2(1770, 330)
+
+[node name="Visual" type="Node2D" parent="Platform5"]
+script = ExtResource("4_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Platform6" type="StaticBody2D" parent="."]
+position = Vector2(2110, 450)
+
+[node name="Visual" type="Node2D" parent="Platform6"]
+script = ExtResource("4_platform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(150, 520)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Controls" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 420.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.84, 1)
+text = "Mover: A/D ou setas   |   Pular: W, ↑ ou Espaço"

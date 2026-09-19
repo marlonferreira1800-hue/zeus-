@@ -1,0 +1,176 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/terrain.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/entity.tscn" id="3"]
+[ext_resource type="Script" path="res://scripts/level_art.gd" id="4"]
+
+[node name="Level" type="Node2D"]
+metadata/world_width = 1575
+
+[node name="ArtFar" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.09, 1)
+repeat_size = Vector2(691, 0)
+script = ExtResource("4")
+theme = 0
+
+[node name="ArtNear" type="Node2D" parent="."]
+script = ExtResource("4")
+theme = 0
+art_layer = 1
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(47, 267)
+
+[node name="Ground1" parent="." instance=ExtResource("2")]
+position = Vector2(162, 312.75)
+size = Vector2(324, 67.5)
+theme = 0
+
+[node name="Ground2" parent="." instance=ExtResource("2")]
+position = Vector2(531, 312.75)
+size = Vector2(324, 67.5)
+theme = 0
+
+[node name="Ground3" parent="." instance=ExtResource("2")]
+position = Vector2(897.75, 312.75)
+size = Vector2(301.5, 67.5)
+theme = 0
+
+[node name="Ground4" parent="." instance=ExtResource("2")]
+position = Vector2(1338.75, 312.75)
+size = Vector2(472.5, 67.5)
+theme = 0
+
+[node name="Ledge1" parent="." instance=ExtResource("2")]
+position = Vector2(144, 230.63)
+size = Vector2(81, 20.25)
+theme = 0
+
+[node name="Ledge2" parent="." instance=ExtResource("2")]
+position = Vector2(249.75, 183.38)
+size = Vector2(76.5, 20.25)
+theme = 0
+
+[node name="Ledge3" parent="." instance=ExtResource("2")]
+position = Vector2(373.5, 219.38)
+size = Vector2(81, 20.25)
+theme = 0
+
+[node name="Ledge4" parent="." instance=ExtResource("2")]
+position = Vector2(508.5, 172.13)
+size = Vector2(81, 20.25)
+theme = 0
+
+[node name="Ledge5" parent="." instance=ExtResource("2")]
+position = Vector2(616.5, 223.88)
+size = Vector2(72, 20.25)
+theme = 0
+
+[node name="Ledge6" parent="." instance=ExtResource("2")]
+position = Vector2(749.25, 203.63)
+size = Vector2(76.5, 20.25)
+theme = 0
+
+[node name="Ledge7" parent="." instance=ExtResource("2")]
+position = Vector2(866.25, 156.38)
+size = Vector2(85.5, 20.25)
+theme = 0
+
+[node name="Ledge8" parent="." instance=ExtResource("2")]
+position = Vector2(963, 221.63)
+size = Vector2(81, 20.25)
+theme = 0
+
+[node name="Ledge9" parent="." instance=ExtResource("2")]
+position = Vector2(1089, 201.38)
+size = Vector2(81, 20.25)
+theme = 0
+
+[node name="Ledge10" parent="." instance=ExtResource("2")]
+position = Vector2(1219.5, 230.63)
+size = Vector2(72, 20.25)
+theme = 0
+
+[node name="Ledge11" parent="." instance=ExtResource("2")]
+position = Vector2(1323, 183.38)
+size = Vector2(81, 20.25)
+theme = 0
+
+[node name="Fragment1" parent="." instance=ExtResource("3")]
+position = Vector2(144, 202.5)
+kind = 5
+
+[node name="Fragment2" parent="." instance=ExtResource("3")]
+position = Vector2(247.5, 155.25)
+kind = 5
+
+[node name="Fragment3" parent="." instance=ExtResource("3")]
+position = Vector2(364.5, 191.25)
+kind = 5
+
+[node name="Fragment4" parent="." instance=ExtResource("3")]
+position = Vector2(504, 144)
+kind = 5
+
+[node name="Fragment5" parent="." instance=ExtResource("3")]
+position = Vector2(612, 195.75)
+kind = 5
+
+[node name="Fragment6" parent="." instance=ExtResource("3")]
+position = Vector2(742.5, 175.5)
+kind = 5
+
+[node name="Fragment7" parent="." instance=ExtResource("3")]
+position = Vector2(864, 128.25)
+kind = 5
+
+[node name="Fragment8" parent="." instance=ExtResource("3")]
+position = Vector2(958.5, 193.5)
+kind = 5
+
+[node name="Fragment9" parent="." instance=ExtResource("3")]
+position = Vector2(1084.5, 173.25)
+kind = 5
+
+[node name="Fragment10" parent="." instance=ExtResource("3")]
+position = Vector2(1219.5, 202.5)
+kind = 5
+
+[node name="Fragment11" parent="." instance=ExtResource("3")]
+position = Vector2(1318.5, 155.25)
+kind = 5
+
+[node name="Fragment12" parent="." instance=ExtResource("3")]
+position = Vector2(1422, 254.25)
+kind = 5
+
+[node name="Slime1" parent="." instance=ExtResource("3")]
+position = Vector2(220.95, 272.25)
+kind = 1
+patrol_distance = 48.0
+patrol_speed = 29.0
+
+[node name="Slime2" parent="." instance=ExtResource("3")]
+position = Vector2(522.45, 272.25)
+kind = 1
+patrol_distance = 48.0
+patrol_speed = 29.0
+
+[node name="Slime3" parent="." instance=ExtResource("3")]
+position = Vector2(855.45, 272.25)
+kind = 1
+patrol_distance = 48.0
+patrol_speed = 29.0
+
+[node name="Slime4" parent="." instance=ExtResource("3")]
+position = Vector2(1269.45, 272.25)
+kind = 1
+patrol_distance = 48.0
+patrol_speed = 29.0
+metadata/red_variant = true
+
+[node name="Portal" parent="." instance=ExtResource("3")]
+position = Vector2(1474, 240)
+kind = 3
+
